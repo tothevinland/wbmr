@@ -43,8 +43,14 @@ export default function SegmentDetailPage() {
     );
   }
 
-  const { segment, geojson } = segmentData.data;
-  if (!geojson || !segment) return null;
+  const { geojson } = segmentData.data;
+  if (!geojson) return null;
+
+  const segment = {
+    ...geojson.properties,
+    segment_id: geojson.properties.id,
+    people_involved: geojson.properties.people_involved || [],
+  };
 
   const coords = geojson.geometry.coordinates;
   const location = geojson.geometry.type === 'Point'

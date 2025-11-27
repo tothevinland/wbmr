@@ -390,6 +390,7 @@ export interface RoadSegmentResponse {
       properties: {
         id: string;
         road_name: string;
+        road_slug: string;
         contractor: string;
         status: string;
         type?: string | null;
@@ -400,6 +401,7 @@ export interface RoadSegmentResponse {
         maintenance_firm: string;
         has_osm_data: boolean;
         osm_way_id?: string;
+        people_involved?: PersonInvolved[];
       };
     };
   };
