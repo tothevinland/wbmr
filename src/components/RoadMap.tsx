@@ -37,7 +37,7 @@ export default function RoadMap({ geojson, roadName }: RoadMapProps) {
     const initMap = async () => {
 
       L = (await import('leaflet')).default;
-      await import('leaflet/dist/leaflet.css');
+      await import('leaflet/dist/leaflet.css' as any);
 
       if (!mapRef.current) return;
 
