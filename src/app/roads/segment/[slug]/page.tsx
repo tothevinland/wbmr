@@ -54,8 +54,8 @@ export default function SegmentDetailPage() {
 
   const coords = geojson.geometry.coordinates;
   const location = geojson.geometry.type === 'Point'
-    ? { lng: coords[0], lat: coords[1] }
-    : { lng: coords[0][0], lat: coords[0][1] };
+    ? { lng: (coords as [number, number])[0], lat: (coords as [number, number])[1] }
+    : { lng: (coords as number[][])[0][0], lat: (coords as number[][])[0][1] };
 
   const handleEditClick = () => {
     setEditedSegment({});
