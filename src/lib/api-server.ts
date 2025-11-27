@@ -1,5 +1,5 @@
 // Server-side API calls for SSR
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://wbmrapi.fly0.tech';
 
 export async function fetchGroupedRoads(params: {
   skip?: number;
