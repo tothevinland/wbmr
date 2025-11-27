@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Leaflet CSS imports */
+@import 'leaflet/dist/leaflet.css';
+
+@layer base {
+  body {
+    @apply bg-white text-black;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-blue-600 text-white rounded-lg font-medium transition-all hover:bg-blue-700 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed text-sm;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-blue-500 text-white border border-blue-500 rounded-lg font-medium transition-all hover:bg-blue-600 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed text-sm;
+  }
+
+  .btn-accent {
+    @apply px-4 py-2 bg-blue-500 text-white rounded-lg font-medium transition-all hover:bg-blue-600 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed text-sm;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 md:px-4 md:py-3 text-sm md:text-base text-black bg-gray-50 border-0 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all rounded-lg;
+  }
+
+  .card {
+    @apply bg-white rounded-lg p-4 cursor-pointer hover:bg-gray-50 transition-colors;
+  }
+}
+
+/* Leaflet map styles */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Fix Leaflet marker icons */
+.leaflet-marker-icon {
+  margin-left: -12px !important;
+  margin-top: -41px !important;
+}
+
+.leaflet-default-icon-path {
+  background-image: url('https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png');
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+}
+
+/* Make roads stand out with subtle shadow */
+path.leaflet-interactive {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  transition: all 0.2s ease;
+}
+
+path.leaflet-interactive:hover {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}

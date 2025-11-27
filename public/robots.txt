@@ -1,0 +1,10 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow authentication and admin pages
+Disallow: /auth/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://whobuiltmyroad.com/sitemap.xml
